@@ -1,15 +1,11 @@
-from myreader import extract_text
+from PyPDF2 import PdfReader
 
-print("Welcome to Health Report Analyzer")
+def extract_text(file_path):
+    reader = PdfReader(file_path)
+    text = ""
 
-file_path = input("Enter your PDF file name: ")
+    for page in reader.pages:
+        if page.extract_text():
+            text += page.extract_text()
 
-text = extract_text(file_path)
-
-query = input("Ask your question about the report: ")
-
-if query.lower() in text.lower():
-    print("Answer found in report:")
-    print("->", query, "is mentioned in the report.")
-else:
-    print("No relevant information found.")
+    return text

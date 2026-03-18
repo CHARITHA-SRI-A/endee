@@ -1,25 +1,14 @@
-# Simple Health Tracker Program
+from pdf_reader import extract_text
+from search import search_answer
 
-print("Welcome to Health Tracker")
+print("=== Health Report Analyzer ===")
 
-# Take input from user
-steps = int(input("Enter number of steps you walked today: "))
-water = int(input("Enter glasses of water you drank today: "))
+pdf_path = input("Enter PDF file path: ")
+query = input("Ask your question: ")
 
-# Logic for steps
-if steps >= 10000:
-    print("Great job! You are very active today 💪")
-else:
-    print("Try to walk more. Aim for at least 10,000 steps 🚶")
+text = extract_text(pdf_path)
 
-# Logic for water
-if water >= 8:
-    print("Good hydration! Keep it up 💧")
-else:
-    print("Drink more water! Stay hydrated 💧")
+answer = search_answer(text, query)
 
-# Final suggestion
-if steps >= 10000 and water >= 8:
-    print("Excellent! You are maintaining a healthy lifestyle 🎉")
-else:
-    print("Small improvements can make you healthier 👍")
+print("\nAnswer:")
+print(answer)

@@ -1,14 +1,15 @@
-from pdf_reader import extract_text
-from search import search_answer
+from pdfreader import extract_text
 
-print("=== Health Report Analyzer ===")
+print("Welcome to Health Report Analyzer")
 
-pdf_path = input("Enter PDF file path: ")
-query = input("Ask your question: ")
+file_path = input("Enter your PDF file name: ")
 
-text = extract_text(pdf_path)
+text = extract_text(file_path)
 
-answer = search_answer(text, query)
+query = input("Ask your question about the report: ")
 
-print("\nAnswer:")
-print(answer)
+if query.lower() in text.lower():
+    print("Answer found in report:")
+    print("->", query, "is mentioned in the report.")
+else:
+    print("No relevant information found.")

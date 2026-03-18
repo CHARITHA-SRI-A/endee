@@ -1,10 +1,10 @@
-import fitz  # PyMuPDF
+from PyPDF2 import PdfReader
 
-def extract_text(pdf_path):
-    doc = fitz.open(pdf_path)
+def extract_text(file_path):
+    reader = PdfReader(file_path)
     text = ""
 
-    for page in doc:
-        text += page.get_text()
+    for page in reader.pages:
+        text += page.extract_text()
 
     return text

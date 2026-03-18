@@ -1,5 +1,5 @@
-from PyPDF2 import PdfReader
-from pdfreader import extract_text
+
+from myreader import extract_text
 
 def extract_text(file_path):
     reader = PdfReader(file_path)

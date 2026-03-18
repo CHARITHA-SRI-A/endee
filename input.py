@@ -1,4 +1,4 @@
-from pdfreader import extract_text
+from myreader import extract_text
 
 print("Welcome to Health Report Analyzer")
 

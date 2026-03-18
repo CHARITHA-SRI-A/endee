@@ -137,3 +137,30 @@ If you offer a hosted or managed service based on this software, you must use yo
 ## Third-Party Software
 
 This project includes or depends on third-party software components licensed under their respective open-source licenses. Use of those components is governed by their own license terms.
+
+
+# Health Report Analyzer (RAG-based Project)
+
+## Overview
+This project allows users to upload a health report (PDF) and ask questions. 
+The system extracts text and retrieves relevant answers.
+
+## Features
+- PDF text extraction
+- Question-based search
+- Simple RAG-like system
+
+## How it works
+1. User uploads PDF
+2. Text is extracted
+3. Query is matched with content
+4. Relevant answer is returned
+
+## Setup
+pip install -r requirements.txt
+
+## Run
+python input.py
+
+## Use of Endee
+This project simulates retrieval-based AI workflow which can be extended using Endee vector database.
